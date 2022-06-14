@@ -1,0 +1,67 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes cloud {
+    from{
+        right: -30vw;
+        height: 5px;
+        width: 5px;
+    }
+    20%{
+        top: 100vh;
+    }
+    60%{
+        top: 100px;
+    }
+    80%{
+        top: 100px
+    }
+    to{
+        right: 100vw;
+    }
+}
+body{
+    height: 100vh;
+    overflow: hidden; 
+}
+.sky{
+    height: 100%;
+    background: linear-gradient(to right, #904E95, #E96443);
+}
+.cloud{
+    position: static;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    animation-name: cloud;
+    /* Permet d'indiquer le nom du @keyframes à utiliser */
+    animation-duration: 5s;
+      /* En combien de temps doit se dérouler la totalité de l'animation */
+    animation-direction: normal;
+    /* Si l'animation doit se jouer dans le sens normal, inverse, ou bien alterner */
+    animation-timing-function: linear;
+        /* Le rythme de l'animation doit il varier */
+    animation-delay: 0.5s; 
+      /* Un délai avant de commencer l'animation */
+    animation-iteration-count: infinite;
+        /* Combien de fois doit se jouer l'animation*/
+}
+.cloud div{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    background-color: whitesmoke;
+}
+.part1{
+    top: -35%;
+}
+.part2{
+    left: 35%;
+}
+.part3{
+    left: -35%;
+}
